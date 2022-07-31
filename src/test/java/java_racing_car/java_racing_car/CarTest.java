@@ -1,6 +1,7 @@
 package java_racing_car.java_racing_car;
 
 import java.io.ByteArrayInputStream;
+import java.util.List;
 import java.util.Scanner;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -28,9 +29,7 @@ public class CarTest {
     gameController.generateCarList();
 
     Assertions.assertThat(gameController.carList.size()).isEqualTo(3);
-    Assertions.assertThat(gameController.carList.contains("pobi"));
-    Assertions.assertThat(gameController.carList.contains("woni"));
-    Assertions.assertThat(gameController.carList.contains("jun"));
+    Assertions.assertThat(gameController.carList.containsAll(List.of("pobi", "woni", "jun")));
   }
 
   @Test
